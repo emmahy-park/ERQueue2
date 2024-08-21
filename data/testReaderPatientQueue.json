@@ -1,0 +1,23 @@
+{
+  "patients": [
+    {
+      "admitTime": "10:00",
+      "severityLevel": "B",
+      "name": "Emma",
+      "age": 27
+    },
+    {
+      "admitTime": "10:00",
+      "severityLevel": "C",
+      "name": "Ray",
+      "age":80
+    },
+    {
+      "admitTime": "10:00",
+      "severityLevel": "F",
+      "name": "Jen",
+      "age": 10
+    }
+  ],
+  "name": "2024-08-21"
+}
