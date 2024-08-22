@@ -40,8 +40,6 @@ public class QueueApp {
         boolean keepGoing = true;
         String command = null;
 
-        init();
-
         while (keepGoing) {
             displayMenu();
             command = input.next();
@@ -54,22 +52,6 @@ public class QueueApp {
             }
         }
         System.out.println("\nGoodbye!");
-    }
-
-    //MODIFIES: this
-    //EFFECTS: initializes queue
-    private void init() {
-        this.patient1 = new Patient("Alice", 27, "Mild", "14:00");
-        this.patient2 = new Patient("Bob", 72, "Moderate", "14:00");
-        this.patient3 = new Patient("Carl", 27, "Severe", "14:00");
-
-        this.newPatients = new PatientQueue(date);
-        newPatients.addPatient(patient1);
-        newPatients.addPatient(patient2);
-        newPatients.addPatient(patient3);
-
-        this.input = new Scanner(System.in);
-        input.useDelimiter("\n");
     }
 
     //EFFECTS: Displays menu
@@ -136,13 +118,17 @@ public class QueueApp {
     //MODIFIES: this
     //EFFECTS: View Patients in the Queue
     private void doViewQueue() {
-        System.out.print("\n");
-        for (int i = 0; i < newPatients.getTotalNumberOfPatients(); i++) {
-            System.out.println(newPatients.getPatients().get(i).getName());
+        try {
+            System.out.print("\n");
+            for (int i = 0; i < newPatients.getTotalNumberOfPatients(); i++) {
+                System.out.println(newPatients.getPatients().get(i).getName());
+            }
+            nextPatient = newPatients.getPatients().get(0);
+            System.out.printf("\nNext in queue: %s\n", nextPatient.getName());
+            System.out.printf("In total, there are %s number of patients in the queue.\n", newPatients.getTotalNumberOfPatients());
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("There are no patients in the queue to view.");
         }
-        nextPatient = newPatients.getPatients().get(0);
-        System.out.printf("\nNext in queue: %s\n", nextPatient.getName());
-        System.out.printf("In total, there are %s number of patients in the queue.\n", newPatients.getTotalNumberOfPatients());
     }
 
     //MODIFIES: this

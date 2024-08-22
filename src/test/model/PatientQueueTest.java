@@ -27,6 +27,7 @@ class PatientQueueTest {
     public Patient patient17;
     public Patient patient18;
     public ArrayList<Patient> testList;
+    private PatientQueue jsonQueue;
 
     @BeforeEach
     public void setUp() {
@@ -124,5 +125,12 @@ class PatientQueueTest {
         assertEquals(18, testQueue.getTotalNumberOfPatients());
         testQueue.removePatient();
         assertEquals(17, testQueue.getTotalNumberOfPatients());
+    }
+
+    @Test
+    void testJson() {
+        this.jsonQueue = new PatientQueue("Json Queue");
+        jsonQueue.addPatient(patient1);
+        assertEquals("Json Queue", jsonQueue.toJson().get("name"));
     }
 }
