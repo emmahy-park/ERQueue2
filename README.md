@@ -23,15 +23,17 @@ while the triage nurse can use the menu and buttons to perform the following act
 ### View Description
 A brief description of the application as shown below.
 
-![alt text](/src/main/ui/images/description.png)
+<img src="src/main/ui/images/description.png" width=500>
+
 ### View Saved Patient Information
 A password is required to view the detailed patients' information.
 
-![alt text](/src/main/ui/images/password.png)
+<img src="src/main/ui/images/password.png" width=500>
 
 Upon correct password entry, the patients' name, age, severity level, and admitted time are shown.
 
-![alt text](/src/main/ui/images/patientInfo.png)
+<img src="src/main/ui/images/patientInfo.png" width=500>
+
 ### Exit
 Exits the application.
 ### Load/Save/Clear Queue
@@ -41,18 +43,21 @@ Load Saved Queue: Loads the saved patient queue
 Save Current Queue: Saves the current queue
 Clear Current Queue: Clears the current queue
 
-![alt text](/src/main/ui/images/menu.png)
+<img src="src/main/ui/images/menu.png" width=500>
+
 ### Add Patient
 The Add Patient button allows the triage nurse to add a new patient to the queue.
 Patient's name, age, level of severity, and admitted time should be entered to enable the add button.
 
-![alt text](/src/main/ui/images/addPatient.png)
+<img src="src/main/ui/images/addPatient.png" width=500>
+
 ### Remove Patient
 This allows the triage nurse to update the current queue when the patient sees the doctor.
 ### Next Patient
 This allows to view the first patient in queue and the total number of patients in the queue.
 If there is no patient in the queue, it shows 'There is no patient in queue' as shown in the second figure below.
 
-![alt text](/src/main/ui/images/nextPatient.png)
-![alt text](/src/main/ui/images/noPatient.png)
+<img src="src/main/ui/images/nextPatient.png" width=500>
+<img src="src/main/ui/images/noPatient.png" width=500>
+
 
