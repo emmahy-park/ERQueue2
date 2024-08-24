@@ -31,7 +31,11 @@ public class PatientQueueManager {
             JFrame frame = new JFrame("ERQueue Description");
             JPanel panel = new JPanel(new BorderLayout());
             JTextArea textArea = new JTextArea(
-                    "\nER Queue Management is a Java desktop application that has a graphical user interface that triages the patients in the Emergency Room. In Metro Vancouver, we often face unexpectedly long waits in the Emergency Room. To minimize the wait time and the workforce prioritizing patients, this application prioritizes and outputs the estimated wait time and patient queue.");
+                    "\nERQueue is a Java desktop application with a graphical user interface designed to triage patients in the Emergency Room. \n" +
+                            "In Metro Vancouver, unexpectedly long wait times in the Emergency Room are common, and patients often have no clear idea of their expected wait time or their place in the queue. \n" +
+                            "To streamline the prioritization process and keep patients informed this application generates a prioritized queue based on patient information. \n" +
+                            "The queue ranks patients according to their age, level of severity, and time of arrival.\n" +
+                            "Patients/guardians can view their place in the queue on the GUI panel, while the triage nurse can use the menu and buttons");
             textArea.setFont(new Font("Arial", Font.PLAIN, 16));
             textArea.setEditable(false);
             textArea.setLineWrap(true);
@@ -40,7 +44,7 @@ public class PatientQueueManager {
             textArea.setMargin(new Insets(10, 10, 10, 10));
             panel.add(textArea, BorderLayout.CENTER);
             frame.add(panel);
-            frame.setSize(300,300);
+            frame.setSize(500,350);
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         }
