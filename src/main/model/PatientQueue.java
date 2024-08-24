@@ -12,6 +12,7 @@ public class PatientQueue implements Writable {
     private PriorityQueue<Patient> patientQueue;
     private String name;
     private ArrayList<Patient> patientList;
+    private Patient patient;
 
     //EFFECTS: Construct patient queue with a name and empty queue of patients
     public PatientQueue(String name) {
@@ -60,6 +61,34 @@ public class PatientQueue implements Writable {
         patientQueue.addAll(patientList);
         return patientList;
     }
+
+    //MODIFIES: this
+    //EFFECTS: Removes a selected patient
+    public void removePatient(int index) {
+        patientList = new ArrayList<>();
+        while (!patientQueue.isEmpty()) {
+            patientList.add(patientQueue.poll());
+        }
+        for (int i = 0; i < patientList.size(); i++) {
+            if (index != i) {
+                patientQueue.add(patientList.get(i));
+            }
+        }
+    }
+
+    //EFFECTS: Get patient's name
+//    public String getPatientName(int index) {
+//
+//        patientList = new ArrayList<>();
+//        while (!patientQueue.isEmpty()) {
+//            patient = patientQueue.poll();
+//            patientList.add(patient);
+//        }
+//
+//        patientQueue.addAll(patientList);
+//
+//        return patientList.get(index).getName();
+//    }
 
     @Override
     public JSONObject toJson() {
